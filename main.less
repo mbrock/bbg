@@ -3,17 +3,7 @@
 @background: #d6e6dd;
 @foreground: #4a4357;
 @line-height: 24px;
-
-html {
-    background: url(img/ricepaper2.png);
-    /* no-repeat center center fixed; */
-    /* -webkit-background-size: cover; */
-    /* -moz-background-size: cover; */
-    /* -o-background-size: cover; */
-    /* background-size: cover; */
-    margin-top: @line-height * 1;
-    margin-bottom: @line-height * 3;
-}
+@main-width: 550px;
 
 .rounded-corners (@radius: 5px) {
   border-radius: @radius;
@@ -32,51 +22,64 @@ html {
   filter: alpha(opacity=@opacity);
 }
 
+
+html {
+    background: url(img/ricepaper2.png);
+    margin-top: @line-height;
+    margin-bottom: @line-height * 3;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    line-height: @line-height;
+}
+
 #landing {
     display: block;
     .rounded-corners;
     .box-shadow(5px, 10px, 60px, lighten(@foreground, 20%));
     background-image: url(img/yokoji-jizo-text.jpg);
-    width: 550px;
+    width: @main-width;
     height: 251px;
     padding: 0;
     margin: auto auto auto auto;
 }
 
 #main {
-    .rounded-corners;
-//    .translucent;
-//    .box-shadow(5px, 10px, 60px, lighten(@foreground, 20%));
-
-    z-index: -1;
-
-    /* background-image: url(img/concrete_wall.png); */
     color: @foreground;
-    width: 550px;
+    width: @main-width;
 
     margin: 0 auto 0 auto;
     padding: 20px 25px 0 25px;
-
-    font-family: 'Georgia', serif;
-    font-size: 16px;
-    line-height: @line-height;
 }
 
 h1, h2 {
     text-align: center;
 }
 
-a {
-    color: lighten(@foreground, 8%);
+.fleuron {
+    text-align: center;
+    font-size: 26px;
+    color: lighten(@darkfg, 5%);
+    margin: @line-height*2 auto @line-height*2 auto;
 }
+
+a { color: lighten(@foreground, 8%); }
 
 @darkfg: desaturate(lighten(green, 5%), 80%);
 
-b {
-    color: @darkfg;
-}
+b { color: @darkfg; }
 
 h1 { font-size: 28px; }
 
-h2 { margin-top: 3ex; font-size: 16px;
+h2 { margin-top: 3ex; font-size: 14px;
      color: @darkfg; }
+
+#appendix {
+    color: lighten(@foreground, 3%);
+    font-size: 14px;
+    line-height: 21px;
+    width: @main-width - 50px;
+    margin: 0 auto 0 auto;
+}
