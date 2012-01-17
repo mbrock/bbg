@@ -1,0 +1,60 @@
+/* -*- mode: css -*- */
+
+@background: #d6e6dd;
+@foreground: #4a4357;
+
+@line-height: 22px;
+
+html {
+    background: url(img/wood_pattern.png);
+    /* no-repeat center center fixed; */
+    /* -webkit-background-size: cover; */
+    /* -moz-background-size: cover; */
+    /* -o-background-size: cover; */
+    /* background-size: cover; */
+    margin-top: @line-height * 1;
+    margin-bottom: @line-height * 3;
+}
+
+.rounded-corners (@radius: 5px) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
+  box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+}
+
+.translucent (@opacity: 85) {
+  opacity: @opacity / 100.0;
+  filter: alpha(opacity=@opacity);
+}
+
+#main {
+    .rounded-corners;
+//    .translucent;
+    .box-shadow(5px, 10px, 60px, lighten(@foreground, 20%));
+
+    background-image: url(img/ricepaper2.png);
+    color: @foreground;
+    width: 36em;
+
+    margin: 0 auto 4em auto;
+    padding: 0.5em 2em 1em 2em;
+
+    font-family: 'Georgia', serif;
+    font-size: 16px;
+    line-height: @line-height;
+}
+
+h1, h2 {
+    text-align: center;
+//    font-family: 'Helvetica', sans-serif;
+}
+
+h1 { font-size: 28px; }
+
+h2 { margin-top: 3ex; font-size: 18px; }
