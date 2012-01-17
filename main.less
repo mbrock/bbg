@@ -2,11 +2,10 @@
 
 @background: #d6e6dd;
 @foreground: #4a4357;
-
-@line-height: 22px;
+@line-height: 24px;
 
 html {
-    background: url(img/wood_pattern.png);
+    background: url(img/ricepaper2.png);
     /* no-repeat center center fixed; */
     /* -webkit-background-size: cover; */
     /* -moz-background-size: cover; */
@@ -33,17 +32,30 @@ html {
   filter: alpha(opacity=@opacity);
 }
 
+#landing {
+    display: block;
+    .rounded-corners;
+    .box-shadow(5px, 10px, 60px, lighten(@foreground, 20%));
+    background-image: url(img/landing-jizo-550.jpg);
+    width: 550px;
+    height: 309px;
+    padding: 0;
+    margin: auto auto auto auto;
+}
+
 #main {
     .rounded-corners;
 //    .translucent;
-    .box-shadow(5px, 10px, 60px, lighten(@foreground, 20%));
+//    .box-shadow(5px, 10px, 60px, lighten(@foreground, 20%));
 
-    background-image: url(img/ricepaper2.png);
+    z-index: -1;
+
+    /* background-image: url(img/concrete_wall.png); */
     color: @foreground;
-    width: 36em;
+    width: 550px;
 
-    margin: 0 auto 4em auto;
-    padding: 0.5em 2em 1em 2em;
+    margin: 0 auto 0 auto;
+    padding: 20px 25px 0 25px;
 
     font-family: 'Georgia', serif;
     font-size: 16px;
@@ -52,9 +64,12 @@ html {
 
 h1, h2 {
     text-align: center;
-//    font-family: 'Helvetica', sans-serif;
+}
+
+a {
+    color: lighten(@foreground, 8%);
 }
 
 h1 { font-size: 28px; }
 
-h2 { margin-top: 3ex; font-size: 18px; }
+h2 { margin-top: 3ex; font-size: 16px; }
